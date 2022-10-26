@@ -3,10 +3,10 @@ import './form.scss';
 
 const Form = (props) => {
   const [method, setMethod] = useState('GET');
+  const [apiUrl, setApiUrl] = useState('')
 
 let handleSubmit = e => {
     e.preventDefault();
-    let apiUrl = e.target.url.value;
     props.handleApiCall(apiUrl, method);
   }
     return (
@@ -14,7 +14,7 @@ let handleSubmit = e => {
         <form onSubmit={handleSubmit}>
           <label >
             <span>URL: </span>
-            <input name='url' type='text' />
+            <input onChange={(e) => setApiUrl(e.target.value)} name='url' type='text' />
             <button data-testid='button' type="submit">GO!</button>
           </label>
           <label className="methods">

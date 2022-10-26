@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './app.scss';
 
 // Let's talk about using index.js and some other name in the component folder
@@ -12,25 +12,34 @@ import axios from 'axios';
 function App(){
   const [data, setData ] = useState(null);
   const [requestParams, setRequestParams] = useState({});
+  const [headers, setHeaders] = useState(null);
 
-
+  useEffect(() => {
+    console.log('Hope this works')
+      // if using request params to make api request use it here
+  }, [])
   const handleApi = async (url, method='GET') => {
 
     let callData = await axios({
       method: method,
       url: url,
     })
-
+    let params = {
+      url,
+      method
+    }
     setData(callData.data.results);
-    setRequestParams(requestParams);
+    setRequestParams(params);
+    setHeaders(callData.headers);
   }
+
     return (
       <>
         <Header />
         <div>Request Method: {requestParams.method}</div>
         <div>URL: {requestParams.url}</div>
         <Form handleApiCall={handleApi} />
-        <Results data={data} />
+        <Results data={data} headers={headers}/>
         <Footer />
       </>
     );
