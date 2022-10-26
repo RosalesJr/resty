@@ -37,3 +37,28 @@ Today, we begin the first of a 4-Phase build of the RESTy application, written i
 - The Form component should:
 - Call a function on submit that updates the App component via a function sent down as a prop so that the app can process the form values.
 - The Results component should show mock API results.
+
+## Phase 2 Lab27
+
+## Credits/ Collab
+
+Taylor, Stephanie, Stephen, Demo Code
+
+## Phase 2 UML 
+
+![UML Lab27](./public/uml-lab27.png)
+
+In phase 2, we will be receiving user input in preparation of connecting to live APIs, using the useState() hook in our functional components. In order to properly manage state with the useState hook, we will now convert App.js to a functional component.
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to enter the REST Method and URL to an API
+- As a user, I want to see a summary of my request as well as results returned from an API request in my browser in a readable format
+- Application Flow:
+
+- User enters an API URL
+- Chooses a REST Method
+- Clicks the “Go” button
+- Application fetches data from the URL given, with the method specified
+- Displays the response headers and results separately
+- Both headers and results displayed “pretty printed” JSON
