@@ -37,3 +37,32 @@ Today, we begin the first of a 4-Phase build of the RESTy application, written i
 - The Form component should:
 - Call a function on submit that updates the App component via a function sent down as a prop so that the app can process the form values.
 - The Results component should show mock API results.
+
+## Phase 2 Lab27
+
+## URL
+
+[Url](https://codesandbox.io/p/github/RosalesJr/resty/phase2?file=%2FREADME.md&workspace=%257B%2522activeFileId%2522%253A%2522cl9niyv5u0002lrigbcn72avx%2522%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522sidekickItems%2522%253A%255B%257B%2522key%2522%253A%2522cl9p65eef004i356iyigib1ow%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522start%2522%252C%2522port%2522%253A3000%252C%2522key%2522%253A%2522cl9p65gv7008y356i638jnstj%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D)
+
+## Credits/ Collab
+
+Taylor, Stephanie, Stephen, Demo Code
+
+## Phase 2 UML 
+
+![UML Lab27](./public/uml-lab27.png)
+
+In phase 2, we will be receiving user input in preparation of connecting to live APIs, using the useState() hook in our functional components. In order to properly manage state with the useState hook, we will now convert App.js to a functional component.
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to enter the REST Method and URL to an API
+- As a user, I want to see a summary of my request as well as results returned from an API request in my browser in a readable format
+- Application Flow:
+
+- User enters an API URL
+- Chooses a REST Method
+- Clicks the “Go” button
+- Application fetches data from the URL given, with the method specified
+- Displays the response headers and results separately
+- Both headers and results displayed “pretty printed” JSON
