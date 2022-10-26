@@ -69,9 +69,17 @@ The following user stories detail the major functionality for this phase of the 
 
 ## Phase 3 Lab28
 
+## Lab28 UML
+
+![Lab28 UML](./public/uml-lab27.png)
+
 ## Credits % Collab
 
 Taylor, Stephanie, Brandon, Demo Code
+
+## Lab 28 URL
+
+[Lab28 URL](https://codesandbox.io/p/github/RosalesJr/resty/phase3?file=%2FREADME.md&workspace=%257B%2522activeFileId%2522%253A%2522cl9niyv5u0002lrigbcn72avx%2522%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522sidekickItems%2522%253A%255B%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522start%2522%252C%2522port%2522%253A3000%252C%2522key%2522%253A%2522cl9q8ve55004j356ix5vycfub%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D)
 
 In phase 3, we will be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests
 
