@@ -3,17 +3,19 @@ import JSONPretty from 'react-json-pretty';
 import 'react-json-pretty/themes/monikai.css';
 
 const Results = (props) => { 
-  let {data} = props;
-    return (
-      <section>
-        {data ?
+  return (
+    <>
+    <section>
+        {props.data ?
         (<>
           <span data-testid='results'>
-          <JSONPretty data={data}/>
+          <JSONPretty data={props.headers}/>
+          <JSONPretty data={props.data}/>
           </span>
         </>) :
         (<span>Awaiting Request</span>)}
       </section>
+    </>
     );
 }
 
