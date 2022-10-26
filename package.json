@@ -18,7 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
+    "test": "react-scripts test --verbose --coverage",
+    "test-watch": "react-scripts test jest --watchAll --verbose --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
