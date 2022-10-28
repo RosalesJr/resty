@@ -1,45 +1,74 @@
-import { useState, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
+import { reducer } from './components/reducer/reducer';
 import './app.scss';
-
-// Let's talk about using index.js and some other name in the component folder
-// There's pros and cons for each way of doing this ...
 import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form';
 import Results from './components/results';
+import History from './components/history';
 import axios from 'axios';
 
+const initialState = {
+  data: null,
+  requestParams: {},
+  history: [],
+}
+
 function App(){
-  const [data, setData ] = useState(null);
-  const [requestParams, setRequestParams] = useState({});
-  const [headers, setHeaders] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    console.log('Hope this works')
-      // if using request params to make api request use it here
-  }, [])
-  const handleApi = async (url, method='GET') => {
-
-    let callData = await axios({
-      method: method,
-      url: url,
-    })
-    let params = {
-      url,
-      method
+    let fetch = async () => {
+      let result = await axios(state.requestParams);
+      console.log(result);
+      const data = {
+        header: result.headers,
+        data: result.data
+      };
+      setData(data);
+      updateHistory(state.requestParams, data);
     }
-    setData(callData.data.results);
-    setRequestParams(params);
-    setHeaders(callData.headers);
+    if (state.requestParams && state.requestParams.method) fetch();
+  }, [state.requestParams])
+
+  function setReqParams(requestParams) {
+    dispatch({
+      type: 'SET_REQ_PARAMS',
+      payload: requestParams,
+    });
+  }
+
+  function setData(data) {
+    dispatch({
+      type: 'SET_DATA',
+      payload: data,
+    });
+  }
+
+  function updateHistory(requestParams, data) {
+    let reqHistory = {
+      method: requestParams.method,
+      url: requestParams.url,
+      data: data
+    }
+    dispatch({
+      type: 'UPDATE_HISTORY',
+      payload: reqHistory
+    });
+  }
+
+  function handleApi(requestParams) {
+    setReqParams(requestParams);
   }
 
     return (
       <>
         <Header />
-        <div>Request Method: {requestParams.method}</div>
-        <div>URL: {requestParams.url}</div>
+        <div className='request-meth'>Request Method: {state.requestParams.method}</div>
+        <div className='url'>URL: {state.requestParams.url}</div>
         <Form handleApiCall={handleApi} />
-        <Results data={data} headers={headers}/>
+        <History history={state.history} />
+        <Results data={state.data} headers={state.headers}/>
         <Footer />
       </>
     );
