@@ -95,3 +95,41 @@ Clicks the “Go” button
 Application fetches data from the URL given, with the method specified
 Displays the response headers and results separately
 Both headers and results should be “pretty printed” JSON
+
+## Reflection Phase 3
+
+This assignment was very challenging. Hardest part was getting the url to populate on the homepage after a input.
+
+## Phase 4 Lab29
+
+## Lab29 UML
+
+![Lab28 UML](./public/uml-lab27.png)
+
+## Credits & Collab
+
+Taylor, Stephen, Brandon, Demo Code
+
+## Lab 29 URL
+
+[Lab29 URL](https://codesandbox.io/p/github/RosalesJr/resty/phase4?file=%2FREADME.md&workspace=%257B%2522activeFileId%2522%253A%2522cl9niyv5u0002lrigbcn72avx%2522%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522sidekickItems%2522%253A%255B%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522start%2522%252C%2522port%2522%253A3000%252C%2522key%2522%253A%2522cl9rtmpep0048356idavdqey3%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D)
+
+In phase 4, we will be tracking every API call and storing it in history
+
+The following user stories detail the major functionality for this phase of the project.
+
+As a user, I want to see a list of my previous API calls, so that I can see the results again, quickly
+Application Flow:
+
+User enters an API URL
+Chooses a REST Method
+Clicks the “Go” button
+Application fetches data from the URL given, with the method specified
+Application stores the API request and returned data into state
+Updates the list of previous API calls
+Application Displays the response headers and results separately
+Both headers and results should be “pretty printed” JSON
+
+## Reflection Phase 4
+
+This assignment was very challenging. Hardest part was incorparating both useEffect and useReducer to the project. I broke it my app more times than I can count using them. 
